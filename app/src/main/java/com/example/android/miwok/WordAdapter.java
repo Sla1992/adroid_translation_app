@@ -32,15 +32,13 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
         Word currentWord = getItem(position);
 
-
-        TextView defaultTextView = (TextView) listItemView.findViewById(R.id.default_text_view);
-
-        defaultTextView.setText(currentWord.getDefaultTranslation());
-
         TextView serbianTextView = (TextView) listItemView.findViewById(R.id.serbian_text_view);
 
         serbianTextView.setText(currentWord.getSerbianTranslation());
 
+        TextView defaultTextView = (TextView) listItemView.findViewById(R.id.default_text_view);
+
+        defaultTextView.setText(currentWord.getDefaultTranslation());
 
         return listItemView;
 

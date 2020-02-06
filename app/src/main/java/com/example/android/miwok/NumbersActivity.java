@@ -2,7 +2,6 @@ package com.example.android.miwok;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -12,7 +11,7 @@ public class NumbersActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_numbers);
+        setContentView(R.layout.word_list);
 
         //Create an array of words
         ArrayList<Word> words = new ArrayList<Word>();
@@ -38,10 +37,11 @@ public class NumbersActivity extends AppCompatActivity {
 
 
 
-        WordAdapter<Word> Adapter =
-                new ArrayAdapter<Word>(this, R.layout.list_item, words);
+        WordAdapter adapter = new WordAdapter(this, words);
+
         ListView listView = (ListView) findViewById(R.id.list);
-        listView.setAdapter(Adapter);
+
+        listView.setAdapter(adapter);
 
 //        LinearLayout rootView = (LinearLayout)findViewById(R.id.rootView);
 
